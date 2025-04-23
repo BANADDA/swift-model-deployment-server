@@ -102,24 +102,57 @@ python audio_test.py path/to/audio.wav --prompt "Transcribe this audio and tell 
 
 ## Supported Models
 
-### Text Models
+### Text-Only Models (LLMs)
 
-- Qwen2.5 models (7B, 72B)
-- Gemma models (2-9B, 2-27B, 3-12B)  
-- Llama 3 models (3B to 70B)
-- Phi models (3.5, 4)
-- Mistral models
-- DeepSeek models
-- Yi models
-- GLM models
+| Family | Model | Parameters | Type | Model ID |
+|--------|-------|------------|------|----------|
+| **Qwen** | Qwen2.5-7B-Instruct | 7B | Instruct | `Qwen/Qwen2.5-7B-Instruct` |
+| | Qwen2.5-72B-Instruct | 72B | Instruct | `Qwen/Qwen2.5-72B-Instruct` |
+| | Qwen2.5-Coder-7B-Instruct | 7B | Coding | `Qwen/Qwen2.5-Coder-7B-Instruct` |
+| | Qwen2.5-Math-7B-Instruct | 7B | Math | `Qwen/Qwen2.5-Math-7B-Instruct` |
+| **Gemma** | Gemma-2-9B-Instruct | 9B | Instruct | `LLM-Research/gemma-2-9b-it` |
+| | Gemma-2-27B-Instruct | 27B | Instruct | `LLM-Research/gemma-2-27b-it` |
+| | Gemma-3-12B-Instruct | 12B | Instruct | `LLM-Research/gemma-3-12b-it` |
+| **Llama** | Meta-Llama-3.1-8B-Instruct | 8B | Instruct | `LLM-Research/Meta-Llama-3.1-8B-Instruct` |
+| | Meta-Llama-3.1-70B-Instruct | 70B | Instruct | `LLM-Research/Meta-Llama-3.1-70B-Instruct` |
+| | Llama-3.2-3B-Instruct | 3B | Instruct | `LLM-Research/Llama-3.2-3B-Instruct` |
+| | Llama-3.3-70B-Instruct | 70B | Instruct | `LLM-Research/Llama-3.3-70B-Instruct` |
+| **Phi** | Phi-3-Medium-128k-Instruct | 14B | Instruct | `LLM-Research/Phi-3-medium-128k-instruct` |
+| | Phi-3.5-Mini-Instruct | 3.8B | Instruct | `LLM-Research/Phi-3.5-mini-instruct` |
+| | Phi-4-Mini-Instruct | 3.8B | Instruct | `LLM-Research/Phi-4-mini-instruct` |
+| **Mistral** | Mistral-7B-Instruct-v0.3 | 7B | Instruct | `LLM-Research/Mistral-7B-Instruct-v0.3` |
+| | Mistral-Large-Instruct-2407 | 36B | Instruct | `LLM-Research/Mistral-Large-Instruct-2407` |
+| | Mixtral-8x7B-Instruct-v0.1 | 47B MoE | Instruct | `AI-ModelScope/Mixtral-8x7B-Instruct-v0.1` |
+| **DeepSeek** | DeepSeek-V3 | 7B | Instruct | `deepseek-ai/DeepSeek-V3` |
+| | DeepSeek-R1 | 7B | Instruct | `deepseek-ai/DeepSeek-R1` |
+| | DeepSeek-Coder-V2-Instruct | 7B | Coding | `deepseek-ai/DeepSeek-Coder-V2-Instruct` |
+| **Yi** | Yi-1.5-34B-Chat | 34B | Chat | `01ai/Yi-1.5-34B-Chat` |
+| | Yi-Coder-9B-Chat | 9B | Coding | `01ai/Yi-Coder-9B-Chat` |
+| **GLM** | GLM-4-9B-Chat | 9B | Chat | `ZhipuAI/glm-4-9b-chat` |
+| | GLM-Z1-9B-0414 | 9B | Chat | `ZhipuAI/GLM-Z1-9B-0414` |
 
-### Multimodal Models
+### Multimodal Models (MLLMs)
 
-- **Vision**: Qwen-VL, DeepSeek-VL, LLaVA, Phi-Vision
-- **Audio**: Qwen2-Audio, Llama-Omni
-- **Video**: InternVL, MiniCPM-V
-- **Document/OCR**: Janus-Pro, GOT-OCR
-- **Multi-capability**: MiniCPM-o, Phi-4-Multimodal
+| Family | Model | Parameters | Modalities | Model ID |
+|--------|-------|------------|------------|----------|
+| **Qwen** | Qwen-VL-Chat | 7B | Vision | `Qwen/Qwen-VL-Chat` |
+| | Qwen2-VL-7B-Instruct | 7B | Vision, Video | `Qwen/Qwen2-VL-7B-Instruct` |
+| | Qwen2-Audio-7B-Instruct | 7B | Audio | `Qwen/Qwen2-Audio-7B-Instruct` |
+| **DeepSeek** | DeepSeek-VL-7B-Chat | 7B | Vision | `deepseek-ai/deepseek-vl-7b-chat` |
+| | DeepSeek-VL2 | 7B | Vision | `deepseek-ai/deepseek-vl2` |
+| | Janus-Pro-7B | 7B | Vision, OCR | `deepseek-ai/Janus-Pro-7B` |
+| **Llama** | LLaVA-1.5-7B-HF | 7B | Vision | `llava-hf/llava-1.5-7b-hf` |
+| | Llama-3.2-11B-Vision-Instruct | 11B | Vision | `LLM-Research/Llama-3.2-11B-Vision-Instruct` |
+| | Llama-3.1-8B-Omni | 8B | Audio | `ICTNLP/Llama-3.1-8B-Omni` |
+| **InternVL** | InternVL2-8B | 8B | Vision, Video | `OpenGVLab/InternVL2-8B` |
+| | InternVL3-8B | 8B | Vision, Video | `OpenGVLab/InternVL3-8B` |
+| **Phi** | Phi-3-Vision-128k-Instruct | 4B | Vision | `LLM-Research/Phi-3-vision-128k-instruct` |
+| | Phi-4-Multimodal-Instruct | 4B | Vision, Audio | `LLM-Research/Phi-4-multimodal-instruct` |
+| **Other** | Yi-VL-6B | 6B | Vision | `01ai/Yi-VL-6B` |
+| | MiniCPM-V-2_6 | 7B | Vision, Video | `OpenBMB/MiniCPM-V-2_6` |
+| | MiniCPM-o-2_6 | 7B | Vision, Video, Audio | `OpenBMB/MiniCPM-o-2_6` |
+| | GLM-4V-9B | 9B | Vision | `ZhipuAI/glm-4v-9b` |
+| | GOT-OCR2_0 | 7B | Vision, OCR | `stepfun-ai/GOT-OCR2_0` |
 
 ## Configuration
 
