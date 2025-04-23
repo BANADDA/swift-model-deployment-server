@@ -22,7 +22,7 @@ A Docker-based service for deploying and managing AI models using the SWIFT fram
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/swift-model-deployment-server.git
+   git clone https://github.com/BANADDA/swift-model-deployment-server.git
    cd swift-model-deployment-server
    ```
 
