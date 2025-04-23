@@ -1,0 +1,370 @@
+{
+    "multimodal_models": {
+      "qwen_models": [
+        {
+          "name": "Qwen-VL-Chat",
+          "model_id": "Qwen/Qwen-VL-Chat",
+          "parameters": "7B",
+          "type": "vision",
+          "requires": "-",
+          "description": "Original Qwen vision-language model with strong image understanding and chat capabilities"
+        },
+        {
+          "name": "Qwen2-VL-7B-Instruct",
+          "model_id": "Qwen/Qwen2-VL-7B-Instruct",
+          "parameters": "7B",
+          "type": "vision-video",
+          "requires": "\"qwen_vl_utils>=0.0.6\" \"decord\" -U",
+          "description": "Second generation Qwen vision-language model with both image and video understanding"
+        },
+        {
+          "name": "Qwen2-Audio-7B-Instruct",
+          "model_id": "Qwen/Qwen2-Audio-7B-Instruct",
+          "parameters": "7B",
+          "type": "audio",
+          "requires": "\"transformers>=4.45,<4.49\" \"librosa\" -U",
+          "description": "Specialized audio understanding model from Qwen, capable of processing speech and audio content"
+        }
+      ],
+      "deepseek_models": [
+        {
+          "name": "DeepSeek-VL-7B-Chat",
+          "model_id": "deepseek-ai/deepseek-vl-7b-chat",
+          "parameters": "7B",
+          "type": "vision",
+          "requires": "-",
+          "description": "Vision-language model from DeepSeek with strong reasoning capabilities for images"
+        },
+        {
+          "name": "DeepSeek-VL2",
+          "model_id": "deepseek-ai/deepseek-vl2",
+          "parameters": "7B",
+          "type": "vision",
+          "requires": "\"transformers<4.42\" -U",
+          "description": "Second-generation vision-language model from DeepSeek with improved capabilities"
+        },
+        {
+          "name": "Janus-Pro-7B",
+          "model_id": "deepseek-ai/Janus-Pro-7B",
+          "parameters": "7B",
+          "type": "vision",
+          "requires": "-",
+          "description": "Specialized for document understanding, OCR, and structured document analysis"
+        }
+      ],
+      "llama_models": [
+        {
+          "name": "LLaVA-1.5-7B-HF",
+          "model_id": "llava-hf/llava-1.5-7b-hf",
+          "parameters": "7B",
+          "type": "vision",
+          "requires": "\"transformers>=4.36\" -U",
+          "description": "Popular vision-language model based on Llama 2, known for balanced performance"
+        },
+        {
+          "name": "Llama-3.2-11B-Vision-Instruct",
+          "model_id": "LLM-Research/Llama-3.2-11B-Vision-Instruct",
+          "parameters": "11B",
+          "type": "vision",
+          "requires": "\"transformers>=4.45\" -U",
+          "description": "Meta's multimodal vision model based on the Llama 3.2 architecture"
+        },
+        {
+          "name": "Llama-3.1-8B-Omni",
+          "model_id": "ICTNLP/Llama-3.1-8B-Omni",
+          "parameters": "8B",
+          "type": "audio",
+          "requires": "\"openai-whisper\" -U",
+          "description": "Llama-based model with audio processing capabilities"
+        }
+      ],
+      "internvl_models": [
+        {
+          "name": "InternVL2-8B",
+          "model_id": "OpenGVLab/InternVL2-8B",
+          "parameters": "8B",
+          "type": "vision-video",
+          "requires": "\"transformers>=4.36\" \"timm\" -U",
+          "description": "Advanced vision-video model that handles both still images and video content with high accuracy"
+        },
+        {
+          "name": "InternVL3-8B",
+          "model_id": "OpenGVLab/InternVL3-8B",
+          "parameters": "8B",
+          "type": "vision-video",
+          "requires": "\"transformers>=4.37.2\" \"timm\" -U",
+          "description": "Latest generation InternVL model with improved video understanding and temporal reasoning"
+        }
+      ],
+      "phi_models": [
+        {
+          "name": "Phi-3-Vision-128k-Instruct",
+          "model_id": "LLM-Research/Phi-3-vision-128k-instruct",
+          "parameters": "4B",
+          "type": "vision",
+          "requires": "\"transformers>=4.36\" -U",
+          "description": "Microsoft's efficient vision model with long context window (128K tokens)"
+        },
+        {
+          "name": "Phi-4-Multimodal-Instruct",
+          "model_id": "LLM-Research/Phi-4-multimodal-instruct",
+          "parameters": "4B",
+          "type": "vision-audio",
+          "requires": "\"transformers>=4.36,<4.49\" \"backoff\" \"soundfile\" -U",
+          "description": "Latest Phi model supporting both vision and audio processing"
+        }
+      ],
+      "other_models": [
+        {
+          "name": "Yi-VL-6B",
+          "model_id": "01ai/Yi-VL-6B",
+          "parameters": "6B",
+          "type": "vision",
+          "requires": "\"transformers>=4.34\" -U",
+          "description": "Efficient vision-language model from 01.AI with strong generalization ability"
+        },
+        {
+          "name": "MiniCPM-V-2_6",
+          "model_id": "OpenBMB/MiniCPM-V-2_6",
+          "parameters": "7B",
+          "type": "vision-video",
+          "requires": "\"timm\" \"transformers>=4.36\" \"decord\" -U",
+          "description": "Compact yet powerful vision-video model that excels at efficiency"
+        },
+        {
+          "name": "MiniCPM-o-2_6",
+          "model_id": "OpenBMB/MiniCPM-o-2_6",
+          "parameters": "7B",
+          "type": "vision-video-audio",
+          "requires": "\"timm\" \"transformers>=4.36\" \"decord\" \"soundfile\" -U",
+          "description": "Omni-modal model supporting vision, video, and audio processing in one model"
+        },
+        {
+          "name": "GLM-4V-9B",
+          "model_id": "ZhipuAI/glm-4v-9b",
+          "parameters": "9B",
+          "type": "vision",
+          "requires": "\"transformers>=4.42,<4.45\" -U",
+          "description": "Vision-language model from Zhipu AI with strong reasoning capabilities"
+        },
+        {
+          "name": "GOT-OCR2_0",
+          "model_id": "stepfun-ai/GOT-OCR2_0",
+          "parameters": "7B",
+          "type": "vision",
+          "requires": "-",
+          "description": "Specialized for OCR tasks, document understanding, and text extraction from images"
+        }
+      ]
+    },
+    "text_only_models": {
+      "qwen_models": [
+        {
+          "name": "Qwen2.5-7B-Instruct",
+          "model_id": "Qwen/Qwen2.5-7B-Instruct",
+          "parameters": "7B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.37\" -U",
+          "description": "Alibaba's latest general-purpose instruct model with strong reasoning capabilities"
+        },
+        {
+          "name": "Qwen2.5-72B-Instruct",
+          "model_id": "Qwen/Qwen2.5-72B-Instruct",
+          "parameters": "72B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.37\" -U",
+          "description": "Largest Qwen2.5 model with state-of-the-art performance across many benchmarks"
+        },
+        {
+          "name": "Qwen2.5-Coder-7B-Instruct",
+          "model_id": "Qwen/Qwen2.5-Coder-7B-Instruct",
+          "parameters": "7B",
+          "type": "coding",
+          "requires": "\"transformers>=4.37\" -U",
+          "description": "Specialized coding model based on Qwen2.5 architecture"
+        },
+        {
+          "name": "Qwen2.5-Math-7B-Instruct",
+          "model_id": "Qwen/Qwen2.5-Math-7B-Instruct",
+          "parameters": "7B",
+          "type": "math",
+          "requires": "\"transformers>=4.37\" -U",
+          "description": "Specialized math solving model with enhanced reasoning capabilities"
+        }
+      ],
+      "gemma_models": [
+        {
+          "name": "Gemma-2-9B-Instruct",
+          "model_id": "LLM-Research/gemma-2-9b-it",
+          "parameters": "9B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.42\" -U",
+          "description": "Google's mid-sized instruct model with excellent efficiency and performance"
+        },
+        {
+          "name": "Gemma-2-27B-Instruct",
+          "model_id": "LLM-Research/gemma-2-27b-it",
+          "parameters": "27B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.42\" -U",
+          "description": "Google's largest Gemma 2 model with strong performance across all tasks"
+        },
+        {
+          "name": "Gemma-3-12B-Instruct",
+          "model_id": "LLM-Research/gemma-3-12b-it",
+          "parameters": "12B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.49\" -U",
+          "description": "Latest Gemma model with improved reasoning and instruction-following"
+        }
+      ],
+      "llama_models": [
+        {
+          "name": "Meta-Llama-3.1-8B-Instruct",
+          "model_id": "LLM-Research/Meta-Llama-3.1-8B-Instruct",
+          "parameters": "8B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.43\" -U",
+          "description": "Efficient Llama 3.1 model with excellent performance for its size"
+        },
+        {
+          "name": "Meta-Llama-3.1-70B-Instruct",
+          "model_id": "LLM-Research/Meta-Llama-3.1-70B-Instruct",
+          "parameters": "70B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.43\" -U",
+          "description": "Powerful Llama 3.1 model with state-of-the-art performance on many benchmarks"
+        },
+        {
+          "name": "Llama-3.2-3B-Instruct",
+          "model_id": "LLM-Research/Llama-3.2-3B-Instruct",
+          "parameters": "3B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.43\" -U",
+          "description": "Compact Llama 3.2 model with excellent performance-to-size ratio"
+        },
+        {
+          "name": "Llama-3.3-70B-Instruct",
+          "model_id": "LLM-Research/Llama-3.3-70B-Instruct",
+          "parameters": "70B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.43\" -U",
+          "description": "Most recent large Llama model with enhanced capabilities"
+        }
+      ],
+      "phi_models": [
+        {
+          "name": "Phi-3-Medium-128k-Instruct",
+          "model_id": "LLM-Research/Phi-3-medium-128k-instruct",
+          "parameters": "14B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.36\" -U",
+          "description": "Microsoft's efficient model with long context window and strong overall performance"
+        },
+        {
+          "name": "Phi-3.5-Mini-Instruct",
+          "model_id": "LLM-Research/Phi-3.5-mini-instruct",
+          "parameters": "3.8B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.36\" -U",
+          "description": "Compact Microsoft model with outstanding performance for its size"
+        },
+        {
+          "name": "Phi-4-Mini-Instruct",
+          "model_id": "LLM-Research/Phi-4-mini-instruct",
+          "parameters": "3.8B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.36\" -U", 
+          "description": "Latest compact Microsoft model with enhanced reasoning abilities"
+        }
+      ],
+      "mistral_models": [
+        {
+          "name": "Mistral-7B-Instruct-v0.3",
+          "model_id": "LLM-Research/Mistral-7B-Instruct-v0.3",
+          "parameters": "7B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.34\" -U",
+          "description": "Solid 7B parameter model with excellent efficiency"
+        },
+        {
+          "name": "Mistral-Large-Instruct-2407",
+          "model_id": "LLM-Research/Mistral-Large-Instruct-2407",
+          "parameters": "36B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.43\" -U",
+          "description": "Mistral's largest model with state-of-the-art reasoning capabilities"
+        },
+        {
+          "name": "Mixtral-8x7B-Instruct-v0.1",
+          "model_id": "AI-ModelScope/Mixtral-8x7B-Instruct-v0.1",
+          "parameters": "47B MoE",
+          "type": "instruct",
+          "requires": "\"transformers>=4.36\" -U",
+          "description": "Mixture of Experts model with powerful capabilities but efficient inference"
+        }
+      ],
+      "deepseek_models": [
+        {
+          "name": "DeepSeek-V3",
+          "model_id": "deepseek-ai/DeepSeek-V3",
+          "parameters": "7B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.39.3\" -U",
+          "description": "Latest DeepSeek text model with enhanced general capabilities"
+        },
+        {
+          "name": "DeepSeek-R1",
+          "model_id": "deepseek-ai/DeepSeek-R1",
+          "parameters": "7B",
+          "type": "instruct",
+          "requires": "\"transformers>=4.39.3\" -U",
+          "description": "Specialized reasoning model with state-of-the-art performance on complex tasks"
+        },
+        {
+          "name": "DeepSeek-Coder-V2-Instruct",
+          "model_id": "deepseek-ai/DeepSeek-Coder-V2-Instruct",
+          "parameters": "7B",
+          "type": "coding",
+          "requires": "\"transformers>=4.39.3\" -U",
+          "description": "Top-tier coding model with excellent multilingual code generation capabilities"
+        }
+      ],
+      "yi_models": [
+        {
+          "name": "Yi-1.5-34B-Chat",
+          "model_id": "01ai/Yi-1.5-34B-Chat",
+          "parameters": "34B",
+          "type": "chat",
+          "requires": "-",
+          "description": "Large and powerful Yi model with excellent general capabilities"
+        },
+        {
+          "name": "Yi-Coder-9B-Chat",
+          "model_id": "01ai/Yi-Coder-9B-Chat",
+          "parameters": "9B",
+          "type": "coding",
+          "requires": "-",
+          "description": "Specialized coding model from Yi with strong programming capabilities"
+        }
+      ],
+      "glm_models": [
+        {
+          "name": "GLM-4-9B-Chat",
+          "model_id": "ZhipuAI/glm-4-9b-chat",
+          "parameters": "9B",
+          "type": "chat",
+          "requires": "\"transformers>=4.42\" -U",
+          "description": "Latest ChatGLM model with strong multilingual capabilities"
+        },
+        {
+          "name": "GLM-Z1-9B-0414",
+          "model_id": "ZhipuAI/GLM-Z1-9B-0414",
+          "parameters": "9B",
+          "type": "chat",
+          "requires": "\"transformers>=4.51\" -U",
+          "description": "Special variant of GLM designed for specific use cases"
+        }
+      ]
+    }
+  }

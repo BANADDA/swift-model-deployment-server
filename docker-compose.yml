@@ -1,0 +1,25 @@
+version: '3'
+services:
+  swift-deploy-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8020:8020"  # Maps host port 8020 to container port 8020 (API server)
+      - "8001:8001"  # Maps host port 8001 to container port 8001 (Model server)
+    volumes:
+      - ./:/app
+      - ${HOME}/.cache/modelscope:/root/.cache/modelscope
+      - ${HOME}/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+    command: >
+      bash -c "uvicorn api:app --host 0.0.0.0 --port 8020"

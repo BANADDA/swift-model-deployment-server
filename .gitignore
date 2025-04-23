@@ -1,0 +1,55 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Deployment logs
+deployment_*.log
+*.log
+
+# Model responses and test outputs
+*_response.json
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker related files
+.docker/
+
+# Large model files that might be downloaded locally
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.onnx
+
+# Input audio/image files used for testing
+files/
+
+# Environment variables
+.env
